@@ -78,7 +78,7 @@ Upon completing these steps the script produces a tidy data set file saved to th
 
 To run the file, ensure you are in the correct working directory as explained above and run this command in R:
 
-```source('run_analysis.R')```
+`source('run_analysis.R')`
 
 The *run_analysis.R* is heavily commented. Here follows a synopsis of the script's process:
 
