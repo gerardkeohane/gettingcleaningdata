@@ -1,8 +1,12 @@
 
-### Notes on the Working Directory
+### Notes on setting up the Working Directory
 # This script should be placed in a working directory that includes the "UCI HAR Dataset" downloaded from:
+
 #   https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 # and unzipped.
+
+# Please see the README.md file for further details.
 # The file created at the end of this script will be written to the same working directory and named: "tidy_data.txt"
 
 ### Step 1: Merges the training and the test sets to create one data set.
@@ -91,6 +95,7 @@ X_select <- cbind(Activity, X_select)
 # V1, V2, etc. We used the features.txt file to apply more meaningful and descriptive names to each Variable in Step 1 above
 # so we could later select only columns that included "mean" or "std" in their name using the select() function in the
 # dplyr library.
+# We will also do some further tidy up work on the names later in Step 5. 
 # As a result this step has already been completed.
 
 
@@ -136,7 +141,7 @@ names(tidy_data) <- headers
 
 # And write the tidy data set to a local .txt file using the write.table() command with row.name=FALSE
 
-write.table(tidy_data, file="tidy_data.txt")
+write.table(tidy_data, file="tidy_data.txt", row.names = FALSE)
 
 # To read back in the data and view it use the following commands:
-# df <- read.table("tidy_data.txt"); View(df)
+# df <- read.table("tidy_data.txt", header=TRUE); View(df)
